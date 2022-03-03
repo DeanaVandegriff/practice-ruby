@@ -17,17 +17,33 @@ class Vehicles
   end
 end
 
-class Car < Vehicle
+class Car < Vehicles
+  def initialize
+    super
+    @fuel = "full"
+    @make = "Toyota"
+    @model = "Rav 4"
+  end
+
   def honk_horn
     puts "Beeeeeeep!"
   end
 end
 
-class Bike < Vehicle
+class Bike < Vehicles
+  def initialize
+    super
+    @color = "red"
+    @weight = 25
+  end
+
   def ring_bell
     puts "Ring ring!"
   end
 end
 
-car1 = Car.new
-car1[accelerate]
+car = Car.new
+bike = Bike.new
+
+car.honk_horn
+bike.ring_bell
